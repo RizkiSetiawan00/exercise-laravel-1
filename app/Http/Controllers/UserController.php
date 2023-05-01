@@ -8,6 +8,9 @@ use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
+    public function profile(User $akun) {
+        return view('profile-posts', ['username'=>$akun->username]);
+    }
     public function signout(){
         auth()->logout();
         return redirect('/')->with('success', 'You are now logged in!!');
